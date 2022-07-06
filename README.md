@@ -9,12 +9,11 @@ TODO LIST
    BE - Javascript, Node.js, Express, MySQL, AmaconAWS
   <br>FE -
 
-3. 기능
-   로그인, 로그아웃, 회원가입, 회원탈퇴, 이메일 인증을 통한 패스워드 변경 - JWT와 Access, Refresh 토큰 활용
-
-프로필 - multer와 AWS S3으로 프로필 사진 생성, 조회, 수정
-
-게시글 - 조회, 생성, 수정, 삭제
+3. 기능<br>
+   로그인, 로그아웃, 회원가입, 회원탈퇴, 이메일 인증을 통한 패스워드 변경 - JWT와 Access, Refresh 토큰 활용<br>
+   프로필 - multer와 AWS S3으로 프로필 사진 생성, 조회, 수정<br>
+   study그룹 - 조회, 생성, 수정, 삭제, 공부시간 타이머, 통계<br>
+   todo리스트 - 조회, 생성, 수정, 삭제, 완료/취소 토글
 
 
 Swagger로 API 문서 자동화<br>
