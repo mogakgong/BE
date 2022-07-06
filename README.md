@@ -1,7 +1,7 @@
 TODO LIST
 
 1. 주제
-   모바일 app 전용 todo list
+   모바일 전용 app study todo list
 
 2. 주요 기술
    BE - Javascript, Node.js, Express, MySQL, AmaconAWS
@@ -14,8 +14,6 @@ TODO LIST
 
 게시글 - 조회, 생성, 수정, 삭제
 
-댓글 - 조회, 생성, 수정, 삭제, 댓글 추천 조회, 생성, 삭제
-기타
 
 Swagger로 API 문서 자동화
 Dotenv로 환경변수 관리
