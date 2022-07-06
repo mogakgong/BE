@@ -1,0 +1,300 @@
+### 
+
+// 회원가입
+POST http://127.0.0.1:8080/user/signup
+Content-Type: application/json
+
+{
+    "email":"test@naver.com",
+    "nickname": "테스트트",
+    "password":"test123",
+    "confirmPassword":"test123",
+    "myText": "열심히 하자"
+}
+
+###
+// 이메일 중복 검사
+POST  http://127.0.0.1:8080/user/idcheck
+Content-Type: application/json
+
+{
+    "email": "day0942@gmail.com"
+}
+
+###
+// 로그인
+POST http://127.0.0.1:8080/user/login
+Content-Type: application/json
+
+{
+    "email":"test@naver.com",
+    "password":"test123"
+}
+
+###
+// 로그인(gmail)
+GET http://127.0.0.1:8080/auth/google/callback
+Content-Type: application/json
+
+###
+// 로그인(kakao)
+GET http://127.0.0.1:8080/auth/kakao/callback
+Content-Type: application/json
+
+###
+// 로그인(naver)
+GET http://127.0.0.1:8080/auth/naver/callback
+Content-Type: application/json
+
+###
+// 인증 메일
+POST http://127.0.0.1:8080/user/emailuser
+Content-Type: application/json
+
+{
+    "email":"day0942@gmail.com"
+}
+
+###
+// 인증 체크
+POST http://127.0.0.1:8080/user/emailcheck
+Content-Type: application/json
+
+{
+    "emailuser": "5948"
+}
+
+###
+// 비밀번호 변경
+PATCH  http://127.0.0.1:8080/user/changepw
+Content-Type: application/json
+
+{
+    "email": "day0942@gmail.com",
+    "password": "test0000"
+}
+
+###
+// 비밀번호 변경(로그인 했을 때)
+PATCH  http://127.0.0.1:8080/user/login/changepw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NzAzOTg0MywiZXhwIjoxNjU3OTAzODQzfQ.0f3c4Euz6qy8xt_syQ85N_zH9S0sZUcOgJuGeuS9bec
+Content-Type: application/json
+
+{
+    "password": "test1111",
+    "confirmPassword": "test1111"
+}
+
+###
+// 회원 탈퇴
+DELETE http://127.0.0.1:8080/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE2NTcwNTYxNzYsImV4cCI6MTY1NzkyMDE3Nn0.U-uGntvzg-eB-1b3Ps2rUesnVrSDlbAHjBQztnXmuW8
+Content-Type: application/json
+
+
+###
+// 메인페이지
+GET http://127.0.0.1:5000/main
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// 마이페이지
+GET http://127.0.0.1:5000/user/myinfo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// 마이페이지
+PATCH http://127.0.0.1:5000/user/myinfo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "userImg": "",
+    "nickname": "test1",
+    "myText": "화이팅",
+    "myHour": "200시간"
+}
+
+###
+// my study 전체조회
+GET http://127.0.0.1:5000/study/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// my study 상세조회
+GET http://127.0.0.1:5000/study/list/detail/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// my study 삭제
+DELETE http://127.0.0.1:5000/study/list/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// my study todo(day 조회)
+GET http://127.0.0.1:5000/user/todo/day
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// my study todo(week 조회)
+GET http://127.0.0.1:5000/user/todo/week
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// my study todo(작성)
+POST http://127.0.0.1:5000/user/todo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "todo": "인프런 강의 듣기"
+}
+
+###
+// my study todo(수정)?
+PATCH  http://127.0.0.1:5000/user/todo/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "todo": "인프런 강의 완강!"
+}
+
+###
+// my study todo(삭제)
+DELETE http://127.0.0.1:5000/user/todo/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+
+###
+// my study todo timelog (start)
+POST http://127.0.0.1:5000/user/timelog/start
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "startAt": ""
+}
+
+###
+// my study todo timelog (stop)
+PATCH  http://127.0.0.1:5000/user/timelog/stop
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "stopAt": ""
+}
+
+###
+// 스터디원 초대(요청)
+POST  http://127.0.0.1:5000/study/search/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "email": "test1@gmail.com"
+}
+
+###
+// 스터디원 초대(응답)
+POST  http://127.0.0.1:5000/study/answer/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "answer": ""
+}
+
+###
+// 스터디 조회(스터디원 전체조회)
+GET  http://127.0.0.1:5000/study/studyuser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// 스터디 조회(스터디원 상세조회)
+GET  http://127.0.0.1:5000/study/studyuser/:userId
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// 스터디 생성
+POST  http://127.0.0.1:5000/main/study
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "title":"자스 뿌시기",
+    "conten": "자바스크립트 뿌시는 스터디",
+    "hour": "목표시간: 500시간"
+}
+
+###
+// 스터디 설정수정
+PATCH http://127.0.0.1:5000/main/study/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "title":"타임스크립트 뿌시기",
+    "conten": "타입스크립트 공부하는 스터디",
+    "hour": "목표시간: 600시간"
+}
+
+###
+// 스터디 삭제
+DELETE http://127.0.0.1:5000/study/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// 스터디 공부시간(전체 및 스터디원 리스트)
+GET http://127.0.0.1:5000/study/timelog/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// 스터디 todo(조회)
+GET http://127.0.0.1:5000/study/todo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// 스터디 todo(작성)
+POST http://127.0.0.1:5000/study/todo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "text": "코드잇 강의 듣기"
+}
+
+###
+// 스터디 todo(수정)
+PATCH http://127.0.0.1:5000/study/todo/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+{
+    "text": "딥다이브 책 읽기"
+}
+
+###
+// 스터디 todo(삭제)
+DELETE http://127.0.0.1:5000/study/todo/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Content-Type: application/json
+
+###
+// about us
+GET http://127.0.0.1:8000/main/aboutus
+Content-Type: application/json
