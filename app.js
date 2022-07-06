@@ -10,7 +10,6 @@ const passportConfig = require("./passport/index");
 const passport = require("passport");
 const expressSession = require("express-session");
 
-const { sequelize } = require("./models");
 
 dotenv.config();
 
@@ -23,15 +22,6 @@ app.set("view engine", "html");
 //   watch: true,
 // });
 
-//sync로 호출해야 연결이 가능
-sequelize
-  .sync({ force: false, logging: false })
-  .then(() => {
-    console.log("DB 연결");
-  })
-  .catch((err) => {
-    console.error(err);
-  });
 
 passportConfig();
 app.use(express.json());
