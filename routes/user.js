@@ -331,6 +331,7 @@ router.patch("/uer/myinfo", Authmiddle, async (req, res, next) => {
         userImg,
         nickname,
         myText,
+        myTimeLog,
       },
       {
         where: {

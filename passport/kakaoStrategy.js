@@ -15,6 +15,7 @@ module.exports = () => {
       },
       async (accessToken, refreshToken, profile, done) => {
         console.log("kakao profile", profile);
+        console.log(accessToken);
         try {
           const existUser = await User.findOne({
             where: { snsId: profile.id, provider: "kakao" },
@@ -23,7 +24,7 @@ module.exports = () => {
             done(null, existUser);
           } else {
             const newUser = await User.create({
-              /* email: profile._json && profile._json.kakao_account_email, */
+              email: profile._json && profile._json.kakao_account_email,
               nickname: profile.displayName,
               snsId: profile.id,
               provider: "kakao",

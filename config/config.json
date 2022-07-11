@@ -1,12 +1,16 @@
 {
   "development": {
     "username": "root",
-    "password": <비밀번호>,
+    "password": "Test123!",
     "database": "todo",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "timezone": "+09:00",
-    "dialectOptions": {"charset": "utf8mb4", "dateStrings": true, "typeCast": true}
+    "dialectOptions": {
+      "charset": "utf8mb4",
+      "dateStrings": true,
+      "typeCast": true
+    }
   },
   "test": {
     "username": "root",

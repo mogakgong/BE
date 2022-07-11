@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
 
   if (tokenType !== "Bearer") {
     res.status(401).send({
-      errorMessage: "로그인을 반드시 하고 사용 하세요",
+      errorMessage: "로그인을 후 사용 하세요",
     });
     return;
   }
@@ -22,7 +22,7 @@ module.exports = (req, res, next) => {
     });
   } catch (error) {
     res.status(401).send({
-      errorMessage: "로그인 후 이용 가능한 기능입니다.",
+      errorMessage: "로그인 후 이용 가능합니다.",
     });
   }
 };
