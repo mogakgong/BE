@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   config.username,
   config.password,
   {
-    host: "127.0.0.1",
+    host: "15.164.163.167",
     dialect: "mysql",
     timezone: "+09:00",
     dialectOptions: { charset: "utf8mb4", dateStrings: true, typeCast: true },

@@ -1,16 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "Test123!",
-    "database": "todo",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "timezone": "+09:00",
-    "dialectOptions": {
-      "charset": "utf8mb4",
-      "dateStrings": true,
-      "typeCast": true
-    }
+    "username": "user",
+    "password": "user123",
+    "database": "mogakgong",
+    "host": "15.164.163.167",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

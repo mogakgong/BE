@@ -4,12 +4,14 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const nunjucks = require("nunjucks");
 const userRouter = require("./routes/user");
+const imgRouter = require("./routes/img");
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
 const passportConfig = require("./passport/index");
 const passport = require("passport");
 const expressSession = require("express-session");
 
+const { sequelize } = require("./models");
 
 dotenv.config();
 
@@ -22,6 +24,15 @@ app.set("view engine", "html");
 //   watch: true,
 // });
 
+//sync로 호출해야 연결이 가능
+sequelize
+  .sync({ force: false, logging: false })
+  .then(() => {
+    console.log("DB 연결");
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 passportConfig();
 app.use(express.json());
@@ -43,7 +54,7 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-app.use("/", [userRouter]);
+app.use("/", [userRouter, imgRouter]);
 
 app.listen(app.get("port"), () => {
   console.log(app.get("port"), "번 포트에서 대기 중");

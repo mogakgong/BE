@@ -16,6 +16,7 @@ module.exports = () => {
       },
       async (accessToken, refreshToken, profile, done) => {
         console.log("google profile: ", profile);
+        console.log(accessToken);
         try {
           const existUser = await User.findOne({
             where: { snsId: profile.id, provider: "google" },

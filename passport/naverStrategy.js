@@ -19,6 +19,7 @@ module.exports = () => {
       },
       async (accessToken, refreshToken, profile, done) => {
         console.log("naver profile:", profile);
+        console.log(accessToken);
         try {
           const existUser = await User.findOne({
             where: { snsId: profile.id, provider: "naver" },

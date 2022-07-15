@@ -1,12 +1,12 @@
 ### 
 
 // 회원가입
-POST http://127.0.0.1:8080/user/signup
+POST http://15.164.163.167/user/signup
 Content-Type: application/json
 
 {
-    "email":"test@naver.com",
-    "nickname": "테스트트",
+    "email":"moo@naver.com",
+    "nickname": "모각공2",
     "password":"test123",
     "confirmPassword":"test123",
     "myText": "열심히 하자"
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ###
 // 이메일 중복 검사
-POST  http://127.0.0.1:8080/user/idcheck
+POST  http://15.164.163.167/user/idcheck
 Content-Type: application/json
 
 {
@@ -27,8 +27,8 @@ POST http://127.0.0.1:8080/user/login
 Content-Type: application/json
 
 {
-    "email":"test@naver.com",
-    "password":"test123"
+    "email":"day0942@gmail.com",
+    "password":"test1111"
 }
 
 ###
@@ -94,27 +94,27 @@ Content-Type: application/json
 
 ###
 // 메인페이지
-GET http://127.0.0.1:5000/main
+GET http://127.0.0.1:8080/main
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
 
 ###
 // 마이페이지
-GET http://127.0.0.1:5000/user/myinfo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+GET http://127.0.0.1:8080/user/myinfo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NzExOTQxMiwiZXhwIjoxNjU3OTgzNDEyfQ.Vcspi0QxR2rpUhsd4LpB2PFpcEw9AsTiPAkKeZ_bNyI
 Content-Type: application/json
 
 ###
 // 마이페이지
-PATCH http://127.0.0.1:5000/user/myinfo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+PATCH http://127.0.0.1:8080/user/myinfo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NzExOTQxMiwiZXhwIjoxNjU3OTgzNDEyfQ.Vcspi0QxR2rpUhsd4LpB2PFpcEw9AsTiPAkKeZ_bNyI
 Content-Type: application/json
 
 {
     "userImg": "",
     "nickname": "test1",
     "myText": "화이팅",
-    "myHour": "200시간"
+    "myTimeLog": 200
 }
 
 ###

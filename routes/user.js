@@ -15,7 +15,7 @@ const passport = require("passport");
 require("dotenv").config();
 
 const validateSignup = [
-  /* body("email").isEmail().withMessage("이메일을 입력하세요.").normalizeEmail(), */
+  body("email").isEmail().withMessage("이메일을 입력하세요.").normalizeEmail(),
   body("nickname")
     .trim()
     .notEmpty()
@@ -318,24 +318,22 @@ router.get("/user/myinfo", Authmiddle, async (req, res, next) => {
 });
 
 //마이페이지 수정
-router.patch("/uer/myinfo", Authmiddle, async (req, res, next) => {
+router.patch("/user/myinfo", Authmiddle, async (req, res, next) => {
   try {
     const user = res.locals.user;
-    const userImg = req.file.key;
+    //    const userImg = req.file.key;
     const { nickname, myText } = req.body;
 
-    await deleteImg(user.userImg);
+    //    await deleteImg(user.userImg);
 
     await User.update(
       {
-        userImg,
         nickname,
         myText,
-        myTimeLog,
       },
       {
         where: {
-          id: user.id,
+          userId: user.userId,
         },
       }
     );
